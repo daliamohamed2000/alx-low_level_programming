@@ -2,6 +2,7 @@
 
 /**
  * more_numbers - prints 10 times the numbers, from 0 to 14
+ * only use _putchar three times
  *
  * Return: 0
  */
@@ -12,7 +13,7 @@ void more_numbers(void)
 
 	for (row = 1; row <= 10; row++)
 	{
-		for (count = 0; count <= 10; count++)
+		for (count = 0; count <= 14; count++)
 		{
 			num = count;
 			if (count > 9)
