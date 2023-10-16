@@ -4,8 +4,8 @@
  * print_array - prints n elements of an array
  * of integers
  *
- * @n: input
- * @a: input pointer
+ * @n: elements parameter input
+ * @a: string parameter input
  *
  * Return: 0
  */
