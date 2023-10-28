@@ -2,8 +2,8 @@
 
 /**
  * main -  print the result of the multiplication
- * @argc: int
- * @argv: list
+ * @argc: number of command line argument
+ * @argv: pointer to an array of command line argument
  * Return: 0
  */
 
