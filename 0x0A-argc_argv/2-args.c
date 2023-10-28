@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - print the new name
+ * main - prints all arguments it receives.
  * @argc: int
  * @argv: list
  * Return: 0
