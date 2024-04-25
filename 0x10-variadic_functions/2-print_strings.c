@@ -2,24 +2,30 @@
 #include <stdio.h>
 
 /**
- * print_numbers - a function that print numbers, followed by a new line.
+ * print_strings - a function that prints strings, followed by a new line
  *
- * @separator: pointer to constant separator
+ * @separator: pointer to a constant separator
  * @n: start of input variables
  *
  * Return: nothing
 */
 
-void print_numbers(const char *separator, const unsigned int n, ...)
+void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
 	unsigned int index;
+	char *str;
 
 	va_start(ap, n);
 
 	for (index = 0; index < n; index++)
 	{
-		printf("%d", va_arg(ap, int));
+		str = va_arg(ap, char *);
+		if (str)
+			printf("%s", str);
+		else
+			printf("(nil)");
+
 		if (separator && index != n - 1)
 			printf("%s", separator);
 	}
