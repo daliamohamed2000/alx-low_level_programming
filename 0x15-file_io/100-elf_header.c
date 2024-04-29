@@ -51,14 +51,14 @@ void print_magic(unsigned char *e_ident)
 
 	printf("  Magic    ");
 
-	while (index < EI_NIDENT)
+	while (index < EI_NIDENT) /*EI_NIDENT == sizeof(e_ident[]) = 16*/
 	{
 		printf("%02x", e_ident[index]);
 
 		if (index == EI_NIDENT - 1)
 			printf("\n");
 		else
-			printf(" ");
+			printf(" "); /*space each number*/
 
 		index++;
 	}
@@ -76,7 +76,7 @@ void print_class(unsigned char *e_ident)
 {
 	printf("  Class:                             ");
 
-	switch (e_ident[EI_CLASS])
+	switch (e_ident[EI_CLASS]) /*EI_CLASS - File class*/
 	{
 		case ELFCLASSNONE:
 			printf("none\n");
@@ -104,7 +104,7 @@ void print_data(unsigned char *e_ident)
 {
 	printf("  Data:                              ");
 
-	switch (e_ident[EI_DATA])
+	switch (e_ident[EI_DATA]) /*EI_DATA - Data encoding*/
 	{
 		case ELFDATANONE:
 			printf("none\n");
@@ -130,7 +130,7 @@ void print_data(unsigned char *e_ident)
 */
 void print_version(unsigned char *e_ident)
 {
-	printf("  Version:                           ");
+	printf("  Version:                           ");/*EI_VERSION - File version*/
 
 	if (e_ident[EI_VERSION] == EV_CURRENT)
 		printf("%d (current)\n", e_ident[EI_VERSION]);
