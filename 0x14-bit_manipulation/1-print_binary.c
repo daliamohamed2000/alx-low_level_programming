@@ -69,7 +69,7 @@ int _length(unsigned long int n)
 		#endif
 
 		length++;
-		n >>= 1;
+		n >>= 1; /*shift n to the right by 1*/
 
 		#ifdef DEBUG
 		printf("Value of n is %lu after right shifting by one.\n\n", n);
@@ -95,8 +95,8 @@ void print_binary(unsigned long int n)
 
 	length = _length(n);
 
-	if (length > 0)
-		mask <<= length;
+	if (length > 0) /*create mask based on length of number*/
+		mask <<= length; /*shift mask to the left by length*/
 	#ifdef DEBUG
 	debug_1(n, length, mask);
 	#endif
@@ -107,12 +107,12 @@ void print_binary(unsigned long int n)
 		debug_2(n, mask);
 		#endif
 
-		if (n & mask)
+		if (n & mask) /*if n & mask == 1 print 1*/
 			_putchar('1');
-		else
+		else /*else if n & mask == 0 print 0*/
 			_putchar('0');
 
-		mask >>= 1;
+		mask >>= 1; /*shift mask to the right by 1*/
 
 		#ifdef DEBUG
 		debug_3(mask);

@@ -30,6 +30,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned int diff_bits = 0;
 	unsigned long int diff;
 
+	/*xor n and b*/
 	diff = n ^ m;
 
 	#ifdef DEBUG
@@ -42,6 +43,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	printf("\n");
 	#endif
 
+	/*keep shifting diff to right*/
 	do {
 		#ifdef DEBUG
 		printf("diff %ld before right shift ", diff);
